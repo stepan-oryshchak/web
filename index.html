@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Projector Management</title>
+</head>
+
+<body>
+    <header>
+        <div class="left_header">
+            <h2 id="logo_name">Projectors</h2>
+            <button id="showProjectors" onclick="toggleCreateProjectorSection()">Show Projectors</button>
+            <button id="createProjector" onclick="toggleCreateProjectorSection()">Create Projector</button>
+        </div>
+        
+        <div id="bottom"></div>
+
+        <div class="right_header">
+            <label for="find_input">
+                <input id="find_input" type="text" class="form-control" placeholder="Type..." />
+            </label>
+            <button id="find_button">Find</button>
+            <button id="cancel_find_button">Cancel</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="mainHero">
+            <h2>Manage Projectors</h2>
+            <div id="sort">
+                <p>Sort by the most expensive projectors</p>
+                <button id="sort_button">SORT</button>
+            </div>
+            <hr>
+            <div id="expenses">
+                <p>Count total projector expenses:</p>
+                <button id="count_button">Count</button>
+                <button id="calculateSearchedTotalPrice">Calculate Searched Total Price</button>
+                <p id="totalPrice">Total Price: $0.00</p>
+                <button id="resetTotalPrice">Reset Total Price</button>
+            </div>
+        </div>
+
+        <aside id="projectorAside" class="hidden">
+            <form id="projectorForm">
+                <h2>Add New Projector</h2>
+                <label for="model">Model:</label>
+                <input type="text" id="model" required>
+        
+                <label for="resolution">Resolution:</label>
+                <input type="text" id="resolution" required>
+        
+                <label for="InputType">Input Type:</label>
+                <input type="text" id="InputType" required>
+        
+                <label for="price">Price:</label>
+                <input type="number" id="price" required step="0.01">
+        
+                <button type="button" id="save-projector-button" onclick="saveProjector()">Save</button>
+            </form>
+        </aside>
+        
+        <main id="list">
+            <h2>Projector List</h2>
+            <div id="projectorList"></div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
